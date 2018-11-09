@@ -1,0 +1,47 @@
+﻿@using CoreWiki.Core.Domain;
+@page "/article/edit"
+@inject HttpClient Http
+<a href="C:\Users\janis\source\repos\CoreWiki\CoreWiki\Pages\Edit.cshtml.cs">C:\Users\janis\source\repos\CoreWiki\CoreWiki\Pages\Edit.cshtml.cs</a>
+
+
+<h2>Edit Article</h2>
+<form method="post">
+	<input type="hidden" asp-for="Aricle.ID" /> //
+	<div class="text-danger"></div>
+	<div class="form-group">
+		<label asp-for="Article.Topic" class="control-label">Article.Topic</label>
+		<input class="form-control" asp-for="Article.Topic" />
+		<span asp-for="Article.Topic" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Article.Content" class="control-label">Article.Content</label>
+		<input class="form-control" asp-for="Article.Content" />
+		<span asp-valitadation-for="Article.Content" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Upload</span>
+			</div>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" id="inputGroupFile01" onchange="openFile(event)" />
+				<label class="custom-file-label" for="inputGroupFile01">Choose File</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-outline-primary">Save</button>
+	</div>
+</form>
+<a href="details">Go Home</a>
+}
+
+@functions {
+	public class ArticleEdit
+	{
+		public int Id { get; set; }
+		public string Topic { get; set; }
+		public string Slug { get; set; }
+		public string Content { get; set; }
+	}
+}

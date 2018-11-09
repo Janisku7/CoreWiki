@@ -1,6 +1,6 @@
-﻿@page "/create"
+﻿@page "/article/create"
 
-<h1>Counter</h1>
+<h1>Article Creation</h1>
 
 <p>Current count: @currentCount</p>
 
@@ -13,4 +13,12 @@
     {
         currentCount++;
     }
+public class ArticleCreate
+	{
+
+		[Required]
+		public string Topic { get; set; }
+
+		public string Content { get; set; }
+	}
 }

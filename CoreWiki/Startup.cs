@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Blazor.Server;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.Linq;
+using System.Net.Mime;
 
 namespace CoreWiki
 {
@@ -23,6 +27,7 @@ namespace CoreWiki
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			
 			services.ConfigureAutomapper();
 
 			services.ConfigureRSSFeed();
@@ -35,7 +40,13 @@ namespace CoreWiki
 			services.ConfigureLocalisation();
 			services.ConfigureApplicationServices();
 			services.AddMediator();
-
+			services.AddServerSideBlazor<Blazor.Startup>();
+			services.AddResponseCompression(options =>
+			options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+			{
+				MediaTypeNames.Application.Octet,
+				WasmMediaTypeNames.Application.Wasm,
+			}));
 			services.AddFirstStartConfiguration(Configuration);
 
 		}
@@ -59,6 +70,8 @@ namespace CoreWiki
 			app.UseStatusCodePagesWithReExecute("/HttpErrors/{0}");
 
 			app.UseMvc();
+			app.UseResponseCompression();
+			app.UseServerSideBlazor<Blazor.Startup>();
 			
 		}
 	}
