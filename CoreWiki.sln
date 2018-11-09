@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWiki.Core", "CoreWiki.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWiki.Notifications", "CoreWiki.Notifications\CoreWiki.Notifications.csproj", "{45CB32F4-B770-4D10-A2B8-C7E7AD28A180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki.FirstStart", "CoreWiki.FirstStart\CoreWiki.FirstStart.csproj", "{E3000FF5-5456-48FC-9131-8E18E686E1D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWiki.FirstStart", "CoreWiki.FirstStart\CoreWiki.FirstStart.csproj", "{E3000FF5-5456-48FC-9131-8E18E686E1D3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWiki.Application", "CoreWiki.Application\CoreWiki.Application.csproj", "{18172D27-2165-4F34-AA93-F9DD58C2A926}"
 EndProject
@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{
 	ProjectSection(SolutionItems) = preProject
 		pipelines\azure-pipelines-cake.yml = pipelines\azure-pipelines-cake.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki.Blazor", "CoreWiki.Blazor\CoreWiki.Blazor.csproj", "{2327B819-E2AB-4C44-BA50-99A06CC22CA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,10 @@ Global
 		{192CBE23-68A7-4437-A2E1-B88FC3DE152B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{192CBE23-68A7-4437-A2E1-B88FC3DE152B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{192CBE23-68A7-4437-A2E1-B88FC3DE152B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
