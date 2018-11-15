@@ -54,6 +54,7 @@ namespace CoreWiki
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, IOptionsSnapshot<AppSettings> settings, UserManager<CoreWikiUser> userManager, RoleManager<IdentityRole> roleManager)
 		{
+			app.UseResponseCompression();
 			app.ConfigureTelemetry();
 			app.ConfigureExceptions(env);
 			app.ConfigureSecurityHeaders(env);
@@ -70,7 +71,7 @@ namespace CoreWiki
 			app.UseStatusCodePagesWithReExecute("/HttpErrors/{0}");
 
 			app.UseMvc();
-			app.UseResponseCompression();
+			
 			app.UseServerSideBlazor<Blazor.Startup>();
 			
 		}

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Blazor.Components;
-using static CoreWiki.Blazor.Pages.__Edit;
+
 using Microsoft.AspNetCore.Authorization;
+using CoreWiki.Shared.ViewModels;
 
 namespace CoreWiki.Blazor.Pages.Article
 {

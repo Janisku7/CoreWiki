@@ -1,0 +1,29 @@
+﻿@using CoreWiki.Shared.Identity
+@page  "/registration"
+@inject HttpClient Http
+
+<form class="container">
+	<h1>Registrate to CoreWiki</h1>
+	<form-group>
+
+	</form-group>
+	<form-group>
+
+	</form-group>
+</form>
+
+@functions{
+	public string UserName { get; set; } = "";
+	public string PassWord { get; set; } = "";
+	public string Token { get; set; } = "";
+	private async Task SubmitForm()
+	{
+		var vm = new CoreWikiUserViewModel
+		{
+			UserName = UserName,
+			PassWord = PassWord
+
+		};
+		var response = await Http.PostJsonAsync<object>("https://localhost:5001/api/Account/Registration", vm);
+	}
+}

@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoreWiki.Core\CoreWiki.Core.csproj" />
+    <ProjectReference Include="..\CoreWiki.Shared\CoreWiki.Shared.csproj" />
   </ItemGroup>
 
 </Project>

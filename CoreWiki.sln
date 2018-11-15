@@ -49,7 +49,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{
 		pipelines\azure-pipelines-cake.yml = pipelines\azure-pipelines-cake.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki.Blazor", "CoreWiki.Blazor\CoreWiki.Blazor.csproj", "{2327B819-E2AB-4C44-BA50-99A06CC22CA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreWiki.Blazor", "CoreWiki.Blazor\CoreWiki.Blazor.csproj", "{2327B819-E2AB-4C44-BA50-99A06CC22CA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki.Shared", "CoreWiki.Shared\CoreWiki.Shared.csproj", "{2C96D87E-A7B3-4A45-BEFA-A93134134D36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2327B819-E2AB-4C44-BA50-99A06CC22CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C96D87E-A7B3-4A45-BEFA-A93134134D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C96D87E-A7B3-4A45-BEFA-A93134134D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C96D87E-A7B3-4A45-BEFA-A93134134D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C96D87E-A7B3-4A45-BEFA-A93134134D36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
