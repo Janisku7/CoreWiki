@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CoreWiki.Extensions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,7 +19,7 @@ namespace CoreWiki.Configuration.Startup
 			{
 				DefaultRequestCulture = new RequestCulture("en-US"),
 			});
-
+			app.UseMiddleware<CsrfTokenCookieMiddleware> ();
 			return app;
 		}
 	}

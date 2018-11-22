@@ -29,7 +29,12 @@ namespace CoreWiki
 		{
 			
 			services.ConfigureAutomapper();
-
+			services.AddResponseCompression(options =>
+			options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+			{
+				MediaTypeNames.Application.Octet,
+				WasmMediaTypeNames.Application.Wasm,
+			}));
 			services.ConfigureRSSFeed();
 			services.Configure<AppSettings>(Configuration);
 			services.ConfigureSecurityAndAuthentication();
@@ -41,12 +46,8 @@ namespace CoreWiki
 			services.ConfigureApplicationServices();
 			services.AddMediator();
 			services.AddServerSideBlazor<Blazor.Startup>();
-			services.AddResponseCompression(options =>
-			options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
-			{
-				MediaTypeNames.Application.Octet,
-				WasmMediaTypeNames.Application.Wasm,
-			}));
+			
+			
 			services.AddFirstStartConfiguration(Configuration);
 
 		}

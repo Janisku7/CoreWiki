@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 /// <summary>
@@ -16,6 +17,18 @@ namespace CoreWiki.Controller
 	[Route("api/[controller]")]
 	public class CoreWikiSlugController : ControllerBase
 	{
+		private IStringLocalizer<BlazorResource> StringLocalizer;
+		public CoreWikiSlugController(IStringLocalizer<BlazorResource> stringLocalizer)
+		{
+			this.StringLocalizer = stringLocalizer;
+		}
+		[HttpGet]
+		public ActionResult GetClientClientTransactions()
+		{
+			var res = new Dictionary<string, string>();
+			return Ok(StringLocalizer.GetAllStrings().ToDictionary(s => s.Name, s=> s.Value));
+		}
+
 		// GET: api/<controller>
 		[HttpGet]
 		public IEnumerable<string> Get()
